@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    
+    <bean id="printer" class="com.autowire.SonyPrinter"/>
+    
+     <bean id="hp" class="com.autowire.HPPrinter"/>
+     
+      <bean id="atm" class="com.autowire.Atm" autowire = "byName"><!-- here ioc is dping depency injection we need to give interface ref variable name in bean's id = printer then it will do autowiring for us-->
+      <!--<property name="printer" ref="sony"/> we are manually doing setter injection i.e. manual wiriing -->
+      </bean>
+      
+    </beans>
